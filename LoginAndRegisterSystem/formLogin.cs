@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace LoginAndRegisterSystem
 {
-    public partial class formRegister : Form
+    public partial class formLogin : Form
     {
-        public formRegister()
+        public formLogin()
         {
             InitializeComponent();
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

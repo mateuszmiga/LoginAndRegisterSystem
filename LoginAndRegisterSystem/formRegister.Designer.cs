@@ -52,6 +52,7 @@
             this.label1.Size = new System.Drawing.Size(155, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Get Started";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -61,6 +62,7 @@
             this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Username";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textUsername
             // 
@@ -71,6 +73,7 @@
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(216, 21);
             this.textUsername.TabIndex = 2;
+            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
             // 
             // textPassword
             // 
@@ -81,6 +84,7 @@
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(216, 21);
             this.textPassword.TabIndex = 4;
+            this.textPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
             // 
             // label3
             // 
@@ -90,6 +94,7 @@
             this.label3.Size = new System.Drawing.Size(66, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Password";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textConfirmPassword
             // 
@@ -100,6 +105,7 @@
             this.textConfirmPassword.Name = "textConfirmPassword";
             this.textConfirmPassword.Size = new System.Drawing.Size(216, 21);
             this.textConfirmPassword.TabIndex = 6;
+            this.textConfirmPassword.TextChanged += new System.EventHandler(this.textConfirmPassword_TextChanged);
             // 
             // label4
             // 
@@ -109,6 +115,7 @@
             this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Confirm Password";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // checkBoxShowPassword
             // 
@@ -121,6 +128,7 @@
             this.checkBoxShowPassword.TabIndex = 7;
             this.checkBoxShowPassword.Text = "Show Password";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
             // buttonRegister
             // 
@@ -134,6 +142,7 @@
             this.buttonRegister.TabIndex = 8;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // buttonClear
             // 
@@ -147,6 +156,7 @@
             this.buttonClear.TabIndex = 9;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // label5
             // 
@@ -156,6 +166,7 @@
             this.label5.Size = new System.Drawing.Size(159, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Already have an account";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -167,6 +178,7 @@
             this.label6.Size = new System.Drawing.Size(92, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Back to Login";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // formRegister
             // 
@@ -189,10 +201,11 @@
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.formRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
