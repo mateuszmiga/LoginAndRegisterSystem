@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace LoginAndRegisterSystem
 {
@@ -15,6 +16,10 @@ namespace LoginAndRegisterSystem
         public formRegister()
         {
             InitializeComponent();
+
+            OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db_users.mdb;Jet OLEDB:Database Password=1234;");
+            OleDbCommand command = new OleDbCommand();
+            OleDbDataAdapter adapter = new OleDbDataAdapter();
         }
 
         private void formRegister_Load(object sender, EventArgs e)
@@ -34,7 +39,10 @@ namespace LoginAndRegisterSystem
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-
+            if (textUsername.Text == String.Empty || textPassword.Text == String.Empty || textConfirmPassword.Text != textPassword.Text)
+            {
+                MessageBox.Show("Username or password cannot be blank or passwords does not match!");
+            }
         }
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
