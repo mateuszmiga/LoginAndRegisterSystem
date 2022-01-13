@@ -82,6 +82,7 @@
             this.textPassword.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPassword.Location = new System.Drawing.Point(36, 197);
             this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(216, 21);
             this.textPassword.TabIndex = 4;
             this.textPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
@@ -103,6 +104,7 @@
             this.textConfirmPassword.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textConfirmPassword.Location = new System.Drawing.Point(36, 251);
             this.textConfirmPassword.Name = "textConfirmPassword";
+            this.textConfirmPassword.PasswordChar = '*';
             this.textConfirmPassword.Size = new System.Drawing.Size(216, 21);
             this.textConfirmPassword.TabIndex = 6;
             this.textConfirmPassword.TextChanged += new System.EventHandler(this.textConfirmPassword_TextChanged);

@@ -29,7 +29,8 @@ namespace LoginAndRegisterSystem
 
         private void label6_Click(object sender, EventArgs e)
         {
-
+            new formLogin().Show();
+            this.Hide();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -58,13 +59,22 @@ namespace LoginAndRegisterSystem
                 command.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Account created! You can log in now.", "Registration succes.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                new formLogin().Show();
             }
         }
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBoxShowPassword.Checked)
+            {
+                textPassword.PasswordChar = '\0';
+                textConfirmPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                textPassword.PasswordChar = '*';
+                textConfirmPassword.PasswordChar = '*';
+            }
         }
 
         private void textConfirmPassword_TextChanged(object sender, EventArgs e)
