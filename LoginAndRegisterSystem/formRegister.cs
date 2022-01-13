@@ -16,11 +16,11 @@ namespace LoginAndRegisterSystem
         public formRegister()
         {
             InitializeComponent();
-
-            OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db_users.mdb;Jet OLEDB:Database Password=1234;");
-            OleDbCommand command = new OleDbCommand();
-            OleDbDataAdapter adapter = new OleDbDataAdapter();
         }
+
+        OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db_users.mdb;Jet OLEDB:Database Password=1234;");
+        OleDbCommand command = new OleDbCommand();
+        OleDbDataAdapter adapter = new OleDbDataAdapter();
 
         private void formRegister_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,9 @@ namespace LoginAndRegisterSystem
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-
+            textPassword.Text=String.Empty;
+            textUsername.Text=String.Empty;
+            textConfirmPassword.Text=String.Empty;
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -42,6 +44,21 @@ namespace LoginAndRegisterSystem
             if (textUsername.Text == String.Empty || textPassword.Text == String.Empty || textConfirmPassword.Text != textPassword.Text)
             {
                 MessageBox.Show("Username or password cannot be blank or passwords does not match!");
+            }
+            else if (textUsername.Text.Length < 4 || textPassword.Text.Length < 4 || textUsername.Text.Length > 20 ||
+                     textPassword.Text.Length > 20)
+            {
+                MessageBox.Show("Username and Password must be between 4 and 20 characters!");
+            }
+            else
+            {
+                connection.Open();
+                string register = "INSERT INTO tableUsers VALUES ('"+textUsername.Text+"','"+textPassword.Text+"')";
+                command = new OleDbCommand(register, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Account created! You can log in now.", "Registration succes.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
         }
 
