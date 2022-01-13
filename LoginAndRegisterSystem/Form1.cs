@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LoginAndRegisterSystem
 {
-    public partial class Form1 : Form
+    public partial class formRegister : Form
     {
-        public Form1()
+        public formRegister()
         {
             InitializeComponent();
         }
